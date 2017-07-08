@@ -1,3 +1,18 @@
+@keyframes star {
+    from { opacity: 1; }
+    to { opacity: 0.2; }
+}
+
+@keyframes sun {
+    from { box-shadow: 0 0 50px #f5c91a; }
+    to { box-shadow: 0 0 100px #f5c91a; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -13,6 +28,7 @@ html, body {
     background: url('stars.png');
     width: 100%;
     height: 100%;
+    animation: star 4s infinite alternate;
 }
 
 #sun {
@@ -27,4 +43,46 @@ html, body {
     height: 200px;
     background: orange;
     background: radial-gradient(#f5c313, #ec7e08);
+    box-shadow: 0 0 50px #f5c91a;
+    animation: sun 4s infinite alternate;
+}
+
+#earthOrbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    z-index: 4;
+    height: 700px;
+    width: 600px;
+    border-radius: 100%;
+    animation: spin 30s linear infinite;
+}
+
+#earth {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -40px;
+    animation: spin 3s linear infinite;
+}
+
+#moonOrbit {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: -20px;
+    border-radius: 100%;
+    animation: spin 3s linear infinite;
+}
+
+#moon {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: gray;
+    background: radial-gradient(#ddd, #888);
 }
